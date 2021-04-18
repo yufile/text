@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*设置矢量图标*/
+        @font-face {
+            font-family: 'icomoon';
+            src: url('../列表项/fonts/icomoon.eot?7kkyc2');
+            src: url('../列表项/fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'),
+            url('../列表项/fonts/icomoon.ttf?7kkyc2') format('truetype'),
+            url('../列表项/fonts/icomoon.woff?7kkyc2') format('woff'),
+            url('../列表项/fonts/icomoon.svg?7kkyc2#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body{
+            font-family: 'icomoon';
+        }
+        input{
+            font-family: icomoon;
+        }
+
+        *{
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+        .page{
+            width: 100%;
+            height: 100%;
+
+        }
+        .header-top{
+            width: 100%;
+            height: 40px;
+            background: #3e3e3e;
+        }
+        /*设置导航栏宽度高居中*/
+        .header{
+            width: 1226px;
+            height: 40px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        /*设置左侧导航栏 样式使a标签对齐*/
+        .header-left{
+            height: 40px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-right: 80px;
+        }
+        /*设置左侧导航栏a标签的样式*/
+        .header-left a,.header-center a{
+            font-size: 12px;
+        }
+        .header-left a:link,.header-center a:link{
+            color: #828282;
+            text-decoration: none;
+        }
+        .header-left a:visited,.header-center a:visited{
+            color: #828282;
+        }
+        .header-left a:hover,.header-center a:hover{
+            color: #a8a8a8;
+        }
+        /*设置左侧导航栏span标签的样式*/
+        .header-left span,.header-center span{
+            font-size: 12px;
+            color: #474747;
+            margin: 0 5px;
+        }
+        /*取消a标签默认间距*/
+        .header-center {
+            font-size: 0;
+        }
+        /*设置购物车*/
+        .header-right{
+            width: 120px;
+            height: 40px;
+        }
+        .header-right a{
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            background: #a8a8a8;
+            text-align: center;
+            font-size: 12px;
+            line-height: 40px;
+            position: relative;
+        }
+        /*设置购物框样式*/
+        .header-right a .fade-out{
+            width: 300px;
+            height: 0;
+            background: #dbdbdb;
+            position: absolute;
+            left: -180px;
+            transition: height .2s ease;
+        }
+        .header-right a:link{
+            color: #655959;
+            text-decoration: none;
+        }
+        .header-right a:visited{
+            color: #655959;
+        }
+        .header-right a:hover .fade-out{
+            height: 150px;
+            box-shadow: 2px 2px 5px 2px #a8a8a8;
+        }
+        .header-right:hover {
+            height: 40px;
+        }
+        .header-right a:hover{
+            background: #dbdbdb;
+            color: #ffa500;
+        }
+        /*    设置结束*/
+        /*设置下方导航栏*/
+        .header-bottom{
+            width: 100%;
+            height: 100px;
+        }
+        .header-bottom-center-one{
+            width: 1226px;
+            height: 100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-bottom-left{
+            width: 55px;
+            height: 55px;
+            background-color: #f86f0a;
+            background-image: url("../列表项/imges/mi-logo.png"), url("../列表项/imges/mi-home.png");
+            background-repeat: no-repeat;
+            background-position: 3px 3px,52px 3px;
+            transition: background-position .5s ease;
+        }
+        .header-bottom-left:hover{
+            background-position:-52px 3px ,3px 3px ;
+        }
+        .header-bottom-center ul li{
+            float: left;
+            margin-right: 20px;
+        }
+        .header-bottom-center ul li a:link{
+            color: #1f1b1b;
+            text-decoration: none;
+        }
+        .header-bottom-center ul li a:visited{
+            color: #1f1b1b;
+        }
+        .header-bottom-center ul li a:hover{
+            color: #ffa200;
+
+        }
+        .header-bottom-right .text{
+            width: 220px;
+            height: 35px;
+            border: 1px silver solid;
+            outline: none;
+        }
+        .header-bottom-right .sub{
+            width: 50px;
+            height: 37px;
+            margin-left: -10px;
+            border: 1px silver solid;
+            outline: none;
+            background-color: white ;
+        }
+        .header-bottom-right .sub:hover{
+            background-color: #ffa500;
+            color: white;
+        }
+        .header-bottom hr{
+            background: #c7c7c7;
+        }
+        /*   设置手机导航样式*/
+        .header-bar{
+            width: 100%;
+            height: 63px;
+        }
+        .header-bar-bottom{
+            width: 1226px;
+            height: 63px;
+            margin: 0 auto;
+            line-height: 63px;
+        }
+        .header-bar-bottom h2{
+            font-size: 14px;
+            float: left;
+        }
+        .header-bar-left{
+            float: left;
+            display: flex;
+            align-content: center;
+
+        }
+        .header-bar-left span,.header-bar-right span{
+            display: inline-block;
+            font-size: 10px;
+            margin: 0 10px;
+            color: #a8a8a8;
+        }
+        .header-bar-left a,.header-bar-right a{
+            font-size: 10px;
+        }
+        .header-bar-left a:link,.header-bar-right a:link{
+            color: #a8a8a8;
+            text-decoration: none;
+        }
+        .header-bar-left a:visited,.header-bar-right a:visited{
+            color: #a8a8a8;
+        }
+        .header-bar-left a:hover,.header-bar-right a:hover{
+            color: #ffa500;
+        }
+
+        .header-bar hr{
+            background: #ffffff;
+            border: 0;
+            box-shadow: 0 1px 2px 1px #a8a8a8;
+        }
+        .header-bar-right{
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            float: right;
+        }
+        .main{
+            width: 100%;
+            height: 100%;
+        }
+        .main-top{
+            width: 1226px;
+            height: 100%;
+            margin: 20px auto;
+
+            display: flex;
+            justify-content: space-between;
+
+        }
+        .main-left{
+            width: 560px;
+            height: 100%;
+
+        }
+        .main-left .main-img{
+            width: 560px;
+            height: 560px;
+            position: relative;
+        }
+        /*设置手机图片切换条*/
+        .main-img .main-strip{
+            position: absolute;
+            bottom: 10px;
+            left: 160px;
+        }
+        .main-img .main-strip a{
+            display: inline-block;
+            width: 50px;
+            height: 1px;
+            border: 1px #a8a8a8 solid;
+            background: #a8a8a8;
+        }
+        .main-img .main-strip a:hover{
+            background: #5e5e5e;
+        }
+        /*设置左右切换*/
+        .main-left .main-img-a1{
+            display: inline-block;
+            width: 41px;
+            height: 69px;
+            background-image: url("imges/icon-slides.png");
+            background-repeat: no-repeat;
+            background-position: -83px 0;
+            position: absolute;
+            top:260px;
+            left: 10px;
+
+        }
+        .main-left .main-img-a1:hover{
+            background-position: 0 0;
+        }
+        .main-left .main-img-a2{
+            display: inline-block;
+            width: 41px;
+            height: 69px;
+            background-image: url("imges/icon-slides.png");
+            background-repeat: no-repeat;
+            background-position: -124px 0;
+            position: absolute;
+            top:260px;
+            right: 10px;
+        }
+        .main-left .main-img-a2:hover{
+            background-position: -41px 0;
+        }
+    /*    左右切换完成*/
+    /*  设置手机左边具体信息*/
+        .main-top-left{
+            width: 600px;
+            height: 100%;
+        }
+        .main-top-left-seat{
+            width: 598px;
+            height: 104px;
+            margin-top: 20px;
+            border: #c9c9c9 1px solid;
+            position: relative;
+        }
+        .main-top-left-seat-top:before{
+            content: "";
+            color: #a8a8a8;
+        }
+        .main-top-left-seat-top{
+            width: 250px;
+            position: absolute;
+            left: 30px;
+            top: 25px;
+        }
+        .main-top-left-seat-top span{
+           margin-left: 5px;
+            font-size: 14px;
+        }
+        .main-top-left-seat .main-top-left-seat-a1{
+            position: absolute;
+            left: 260px;
+            top:25px;
+            font-size: 14px;
+        }
+        .main-top-left-seat .main-top-left-seat-a1:link,.main-top-left-seat-a2:link{
+            color: #ffa500;
+            text-decoration: none;
+        }
+        .main-top-left-seat .main-top-left-seat-a1:visited,.main-top-left-seat-a2:visited{
+            color: #ffa500;
+        }
+        .main-top-left-seat-a2{
+            position: absolute;
+            left: 60px;
+            top:50px;
+            font-size: 14px;
+        }
+        .main-top-left-center{
+            width: 600px;
+        }
+        .main-top-left-center-h1{
+            font-size: 18px;
+            color: #3e3e3e;
+            margin: 10px 0;
+        }
+        .main-top-left-center-top,.main-top-left-center-bottom{
+            width: 600px;
+            height:108px ;
+            position: relative;
+        }
+
+
+        .main-top-left-center-top ul li,.main-top-left-center-bottom ul li{
+            width: 293px;
+            height: 44px;
+            line-height: 44px;
+            float: left;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .main-top-left-center-top ul li:nth-of-type(1),.main-top-left-center-top ul li:nth-of-type(3){
+            margin: 0 10px 0 0;
+        }
+        .main-top-left-center-bottom ul li:nth-of-type(1),.main-top-left-center-top ul li:nth-of-type(3){
+            margin: 0 10px 0 0;
+        }
+        .main-top-left-center-top ul li a,.main-top-left-center-bottom ul li a{
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+           text-align: center;
+
+            border: 1px #a8a8a8 solid;
+            transition:color .2s ease;
+        }
+        .main-top-left-center-top ul li a:link,.main-top-left-center-bottom ul li a:link{
+            color: #3e3e3e;
+            text-decoration: none;
+        }
+        .main-top-left-center-top ul li a:visited,.main-top-left-center-bottom ul li a:visited{
+            color: #3e3e3e;
+        }
+        .main-top-left-center-top ul a:hover,.main-top-left-center-bottom ul a:hover{
+            border: 1px solid #ffa500;
+        }
+        .main-top-left-center-top ul li a:hover,.main-top-left-center-bottom ul li a:hover{
+            color: #ffa500;
+        }
+        .main-top-left-center-bottom-set{
+            width: 100px;
+        }
+        .main-accident{
+            width: 600px;
+            height: 100%;
+        }
+        /*设置小米意外保护标题样式*/
+        .main-accident-top-h{
+            display:flex ;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            font-size: 20px;
+        }
+        .main-accident-top-h a{
+            font-size: 12px;
+        }
+        .main-accident-top-h a:link{
+            color: #ffa500;
+            text-decoration: none;
+
+        }
+        .main-accident-top-h a:visited{
+            color: #ffa500;
+        }
+        .main-accident-top{
+            width: 600px;
+            height: 100%;
+        }
+        .main-accident-top ul{
+            width: 600px;
+            height: 100%;
+        }
+        .main-accident-top ul li{
+
+            width: 598px;
+            height: 148px;
+            border: #a8a8a8 1px solid;
+            display: flex;
+            flex-direction: row;
+
+            align-items: center;
+        }
+        .main-accident-top ul li .main-accident-span{
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            border: 1px solid #a8a8a8;
+            border-radius: 50%;
+            margin:0 30px 0 40px;
+        }
+        .main-accident-top-h2{
+            color: #ff6f00;
+        }
+        /*设置意外保障服务字体*/
+        .main-accident-top-h2 span{
+            margin-left:5px;
+            width: 40px;
+            display: inline-block;
+            text-align:center;
+            background-color: #ff6f00;
+            color: white;
+
+            border-radius: 20%;
+            font-size: 16px;
+
+        }
+        /*设置意外险勾选*/
+        .main-accident-span2{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border: #a8a8a8 1px solid;
+            border-radius: 20%;
+        }
+        .main-accident-top-li-div-div a:link{
+            color: #ff5900;
+            text-decoration: none;
+        }
+        .main-accident-top-li-div-div a:visited{
+            color: #ff6f00;
+        }
+        /*购买手机价格样式*/
+        .main-price{
+            width: 560px;
+            height: 100%;
+            background: #eaeaea;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        .main-price ul li{
+            font-size: 12px;
+
+        }
+        .main-price ul li span{
+            float: right;
+            color: #b6b6b6;
+        }
+        .main-price-all{
+            width: 200px;
+            height: 30px;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #ff6f00;
+        }
+        .main-buy{
+            width: 600px;
+            height: 54px;
+            display: flex;
+            margin-top: 20px;
+        }
+        .main-buy-a1{
+            width: 300px;
+            height: 54px;
+            background: #ff6f00;
+            margin-right: 10px;
+            line-height: 54px;
+            text-align: center;
+            transition: background-color .5s ease;
+        }
+        .main-buy-a1 a{
+            display: inline-block;
+            width: 300px;
+            height: 54px;
+        }
+        .main-buy-a2 a{
+            display: inline-block;
+            width: 142px;
+            height: 54px;
+        }
+        .main-buy-a2{
+            width: 142px;
+            height: 54px;
+            background: #b6b5b5;
+            margin-right: 10px;
+            line-height: 54px;
+            text-align: center;
+            transition: background-color .5s ease;
+        }
+        .main-buy a:link{
+            color: white;
+            text-decoration: none;
+
+        }
+        .main-buy a:visited{
+            color: white;
+        }
+        .main-buy-a1 a:hover{
+            background-color: #ff6700;
+        }
+        .main-buy-a2 a:hover{
+            background-color: #3e3e3e;
+        }
+        .main-sale{
+            width: 600px;
+            height: 100%;
+            margin-top: 10px;
+        }
+        .main-sale span{
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+        }
+        .main-sale span a{
+            line-height: 30px;
+
+        }
+        .main-sale span a:link{
+            text-decoration: none;
+            color: #a8a8a8;
+        }
+        .main-sale span a:visited{
+            color: #a8a8a8;
+        }
+        .protect{
+            width: 100%;
+            height: 100%;
+            background: #e7e7e7;
+        }
+        .protect-div{
+            width: 1226px;
+            height: 250px;
+            margin: 0 auto;
+        }
+        .protect-div h3{
+            font-weight: normal;
+            margin:10px 0 ;
+        }.footer-top{
+             width: 1226px;
+             height: 80px;
+             margin: 0 auto;
+         }
+        /* 页脚上方售后*/
+        .footer-top ul{
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .footer-top ul li{
+            float: left;
+            margin-bottom: 30px;
+        }
+        .footer-top ul li a{
+            cursor: default;
+        }
+        .footer-top ul li a:link{
+            color: #a8a8a8;
+            text-decoration: none;
+        }
+        .footer-top ul li a:visited{
+            color: #a8a8a8;
+        }
+        .footer-top ul li a:hover{
+            color: #f56404;
+        }
+
+        .footer-top ul li span{
+            margin-right: 10px;
+        }
+        .footer-top ul li:after{
+            content: '|';
+            margin-left: 50px;
+            color: #a8a8a8;
+        }
+        .footer-top ul li:last-child:after{
+            content: '';
+        }
+        /*下方页脚下方售后*/
+        .footer-bottom{
+            width: 1226px;
+            height: 192px;
+            margin: 0 auto;
+        }
+        .footer-bottom dl{
+            float: left;
+            width: 160px;
+            height: 112px;
+        }
+        .footer-bottom dt{
+            font-size: 14px;
+        }
+        .footer-bottom dd{
+            font-size: 12px;
+            margin: 10px 0;
+        }
+        .footer-bottom dl a:link{
+            color: #a8a8a8;
+            text-decoration: none;
+        }
+        .footer-bottom dl dt a:link{
+            cursor: auto;
+        }
+        .footer-bottom dt a:visited{
+            color: #403939;
+        }
+        .footer-bottom dd a:visited{
+            color: #a8a8a8;
+        }
+        .footer-bottom dd a:hover{
+            color: #ffa500 ;
+        }
+        .relation{
+            width: 225px;
+            height: 112px;
+
+            float: right;
+            position: relative;
+        }
+        .relation .relation-center{
+            width: 225px;
+            height: 112px;
+        }
+        .relation .relation-center:before{
+            width: 1px;
+            height: 110px;
+            top: 0;
+            left: -20px;
+            z-index: 99;
+        }
+        .relation .relation-center:before{
+            content: '';
+            position: absolute;
+            background: #bebebf;
+        }
+        .relation-center p:first-child{
+            color: #ffa500;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .relation-center p:last-child{
+            color: #bbbbb9;
+            font-size: 12px;
+        }
+        .relation-center .relation-a{
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            border: 1px orange solid;
+            text-align: center;
+            line-height: 30px;
+            transition: color,background-color 1s ease;
+            margin: 15px;
+        }
+        .relation-center .relation-a:link{
+            color: #ffa500 ;
+            text-decoration: none;
+        }
+        .relation-center .relation-a:visited{
+            color: #ffa500;
+        }
+        .relation-center .relation-a:hover{
+            color: white;
+            background-color: #ffa500;
+
+        }
+        .relation-bottom{
+            width: 252px;
+            height: 21px;
+
+            border: 0;
+            font-size: 12px;
+            line-height: 21px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            margin-left: 10px;
+        }
+        .relation-bottom a:first-child{
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: url("imges/wb_1.png") 50% 0 no-repeat;
+            background-size: cover;
+            line-height: 24px;
+            margin-left: 2px;
+        }
+        .relation-bottom a:last-child{
+            display: inline-block;
+            width: 21px;
+            height: 21px;
+            background: url("imges/wx_1.png") 50% 0 no-repeat;
+            background-size: cover;
+            margin-left: 2px;
+        }
+        .relation-bottom a:last-child:hover{
+            background: url("imges/wx@2x_1.png") no-repeat;
+            background-size: cover;
+        }
+        .relation-bottom a:first-child:hover{
+            background: url("imges/wb@2x_1.png") no-repeat;
+            background-size: cover;
+            /*    background-size: cover把背景图扩展至足够大，直至完全覆盖背景区域*/
+        }
+
+        /*企业权益*/
+        .equity-top{
+            width: 100%;
+            height: 100%;
+        }
+        .equity{
+            width: 1226px;
+            height: 90px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .equity-nav{
+            margin-top: 40px;
+            margin-left: 15px;
+        }
+        .equity-nav p{
+            margin-bottom: 10px;
+        }
+        .equity-nav p:first-child a:link{
+            color: #8b8989;
+            text-decoration: none;
+        }
+        .equity-nav p:first-child a:visited{
+            color: #8b8989;
+        }
+        .equity-nav p:first-child a:hover{
+            color: #ffa500;
+        }
+        .equity-nav span{
+            margin-left: 5px;
+            color: #c6c6c6;
+        }
+        .equity-nav p:last-child a:link{
+            color: #a8a8a8;
+            text-decoration: none;
+        }
+        .equity-nav p:last-child a:visited{
+            color: #a8a8a8;
+        }
+        .equity-nav p:last-child a:hover{
+            color: #ff7b05;
+        }
+        .equity-nav p:last-child{
+            color: #a8a8a8;
+            font-size: 12px;
+        }
+        .equity-bottom{
+            width: 1226px;
+            height: 28px;
+            margin: 50px auto 100px;
+        }
+        .equity-bottom a{
+            margin-left: 60px;
+        }
+        .equity-top .end{
+            width: 368px;
+            height: 21px;
+            margin: 0 auto;
+        }
+        .main-accident ul{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<!--最外边框-->
+<div class="page">
+    <!--    上方导航栏-->
+    <div class="header-top">
+        <div class="header">
+            <!--       上方 左侧导航栏-->
+            <div class="header-left">
+                <a href="#">小米商城</a><span>|</span>
+                <a href="#">MIUI</a><span>|</span>
+                <a href="#">IoT</a><span>|</span>
+                <a href="#">云服务</a><span>|</span>
+                <a href="#">天星数科</a><span>|</span>
+                <a href="#">有品</a><span>|</span>
+                <a href="#">小爱开放平台</a><span>|</span>
+                <a href="#">企业团购</a><span>|</span>
+                <a href="#">资质证照</a><span>|</span>
+                <a href="#">协议规则</a><span>|</span>
+                <a href="#">下载app</a><span>|</span>
+                <a href="#">智能生活</a><span>|</span>
+                <a href="#">Select Location</a>
+            </div>
+            <!--        登录设置-->
+            <div class="header-center">
+                <a href="#">登录</a><span>|</span>
+                <a href="#">消息通知</a><span>|</span>
+                <a href="#">我的订单</a>
+            </div>
+            <!--        设置购物车-->
+            <div class="header-right">
+                <a href="#">
+                    <span></span>&nbsp;购物车(0)
+                    <div class="fade-out">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--    设置搜索框一行的样式-->
+    <div class="header-bottom">
+        <div class="header-bottom-center-one">
+            <div class="header-bottom-left"></div>
+            <div class="header-bottom-center">
+                <ul>
+                    <li><a href="#"> 全部商品分类</a></li>
+                    <li><a href="#">小米手机</a></li>
+                    <li><a href="#">Redmi 红米</a></li>
+                    <li><a href="#">电视</a></li>
+                    <li><a href="#">笔记本</a></li>
+                    <li><a href="#">家电</a></li>
+                    <li><a href="#">路由器</a></li>
+                    <li><a href="#">智能硬件</a></li>
+                    <li><a href="#">服务</a></li>
+                    <li><a href="#">社区</a></li>
+                </ul>
+            </div>
+            <div class="header-bottom-right">
+                <form method="get">
+                    <input class="text" type="text" name="text"  placeholder="商品">
+                    <input class="sub" type="submit" value="">
+                </form>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <!--   设置最后一个手机导航栏-->
+    <div class="header-bar">
+        <div class="header-bar-bottom">
+            <h2>Redmi 10X 5G</h2>
+            <div class="header-bar-left">
+                <span>|</span>
+                <a href="#">Redmi 10X 4G</a>
+            </div>
+            <div class="header-bar-right">
+                <a href="#">概述</a><span>|</span>
+                <a href="#">参数</a><span>|</span>
+                <a href="#">F码通道</a><span>|</span>
+                <a href="#">咨询客服</a><span>|</span>
+                <a href="#">用户评价</a>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <!--    设置内容主题-->
+    <div class="main">
+        <!--        手机图标显示位置-->
+        <div class="main-top">
+            <div class="main-left">
+                <div class="main-img">
+                    <img src="imges/img.png" height="560" width="560"/>
+                    <!--切换条-->
+                    <div class="main-strip">
+                        <a href="#"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                    </div>
+                    <!--左右切换-->
+                    <a class="main-img-a1" href="#"></a>
+                    <a class="main-img-a2" href="#"></a>
+                </div>
+            </div>
+            <!--        手机详情具体信息-->
+            <div class="main-top-left">
+                <h3>Redmi 10X 5G</h3>
+                <p style="font-size: 14px;margin-top: 5px; color: #a8a8a8;"><span style="color: #ffa500">「8GB+256GB版本买赠价值39元保护壳！颜色随机，赠完即止」</span>天玑820处理器/4800万流光相机+800万超广角/6.57"三星AMOLED屏幕/屏幕指纹/4520mAh长续航/红外遥控</p>
+                <p style="font-size: 12px; color: #ffa500; margin:10px 0;">小米自营</p>
+                <p style="font-size: 14px; color: #ffa500 ">1399元 &nbsp;<del style="font-size: 12px; color: #c4c4c4">1799元</del></p>
+                <hr style="background: #dbdbdb;margin:10px 0;">
+                <div class="main-top-left-seat">
+                    <div class="main-top-left-seat-top">
+                        <span>北京</span><span>北京市</span><span>海淀区</span><span>清河街道</span>
+                    </div>
+                    <a class="main-top-left-seat-a1" href="#">修改</a>
+                    <a class="main-top-left-seat-a2" href="#">该地区暂无现货</a>
+                </div>
+<!--                手机颜色内存-->
+                <div class="main-top-left-center">
+                    <div class="main-top-left-center-h1">选择颜色</div>
+<!--                    手机颜色-->
+                    <div class="main-top-left-center-top">
+                        <ul style="">
+                            <li><a href="#">凝液紫</a></li>
+                            <li><a href="#">胧月金</a></li>
+                            <li><a href="#">深海蓝</a></li>
+                            <li><a href="#">星露白</a></li>
+                        </ul>
+                    </div>
+<!--                    手机内存-->
+                    <div class="main-top-left-center-bottom-set" >
+                        <div class="main-top-left-center-h1">选择版本</div>
+                            <div class="main-top-left-center-bottom">
+                                <ul>
+                                    <li><a href="#">6GB+128GB</a></li>
+                                    <li><a href="#">8GB+128GB</a></li>
+                                    <li><a href="#">8GB+128GB</a></li>
+                                </ul>
+                            </div>
+                    </div>
+                </div>
+                <div style="width: 600px;clear: both;" ></div>
+
+<!--            设置意外保护-->
+            <div class="main-accident">
+                <div class="main-accident-top">
+                    <div class="main-accident-top-h">
+                        <span>选择小米意外保护</span>
+                        <a href="#">了解意外保护></a>
+                    </div>
+                    <ul>
+                        <li>
+                            <span class="main-accident-span"></span>
+                            <img src="imges/img_2.png" height="100" width="100"/>
+                            <div class="main-accident-top-li-div">
+                                <h2 class="main-accident-top-h2">
+                                    意外保障服务<span>99元</span>
+                                </h2>
+                                <p style="font-size: 12px; color: #a8a8a8; margin: 10px 0;">手机意外碎屏/进水/碾压等损坏</p>
+                                <div class="main-accident-top-li-div-div">
+                                    <p style="font-size: 16px; font-family: '宋体';">
+                                        <span class="main-accident-span2" ></span>
+                                        我已阅读
+                                        <a href="#">服务条款</a>
+                                        <span style="font-size: 12px; color: #a8a8a8">|</span>
+                                        <a href="#">常见问题</a>
+                                        <span style="display: inline-block; margin-left: 100px;">99元</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="border-top: none;">
+                            <span class="main-accident-span"></span>
+                            <img src="imges/img_2.png" height="100" width="100"/>
+                            <div class="main-accident-top-li-div">
+                                <h2 class="main-accident-top-h2">
+                                    碎屏保障<span>59元</span>
+                                </h2>
+                                <p style="font-size: 12px; color: #a8a8a8; margin: 10px 0;">手机意外碎屏</p>
+                                <div class="main-accident-top-li-div-div">
+                                    <p style="font-size: 16px; font-family: '宋体';">
+                                        <span class="main-accident-span2" ></span>
+                                        我已阅读
+                                        <a href="#">服务条款</a>
+                                        <span style="font-size: 12px; color: #a8a8a8">|</span>
+                                        <a href="#">常见问题</a>
+                                        <span style="display: inline-block; margin-left: 100px;">59元</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+<!--                    选择小米提供的延长保修服务-->
+                    <div class="main-accident-top-h">
+                        <span>选择小米提供的延长保修</span>
+                        <a href="#">了解延长保修></a>
+                    </div>
+                    <ul>
+                        <li>
+                            <span class="main-accident-span"></span>
+                            <img src="imges/img_2.png" height="100" width="100"/>
+                            <div class="main-accident-top-li-div">
+                                <h2 class="main-accident-top-h2">
+                                    延长保修服务<span>29元</span>
+                                </h2>
+                                <p style="font-size: 12px; color: #a8a8a8; margin: 10px 0;">厂保延一年，性能故障免费维修</p>
+                                <div class="main-accident-top-li-div-div">
+                                    <p style="font-size: 16px; font-family: '宋体';">
+                                        <span class="main-accident-span2" ></span>
+                                        我已阅读
+                                        <a href="#">服务条款</a>
+                                        <span style="font-size: 12px; color: #a8a8a8">|</span>
+                                        <a href="#">常见问题</a>
+                                        <span style="display: inline-block; margin-left: 100px;">29元</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+<!--                    选择小米提供的云空间服务-->
+                    <div class="main-accident-top-h">
+                        <span>选择小米提供的云空间服务</span>
+                        <a href="#">了解云空间服务></a>
+                    </div>
+                    <ul>
+                        <li>
+                            <span class="main-accident-span"></span>
+                            <img src="imges/img_3.png" height="100" width="100"/>
+                            <div class="main-accident-top-li-div">
+                                <h2 class="main-accident-top-h2">
+                                    云空间年卡200G<span style="width: 50px;">208元</span>
+                                </h2>
+                                <p style="font-size: 12px; color: #a8a8a8; margin: 10px 0;">主商品签收后，自动激活至下单帐号</p>
+                                <div class="main-accident-top-li-div-div">
+                                    <p style="font-size: 16px; font-family: '宋体';">
+                                        <span class="main-accident-span2" ></span>
+                                        我已阅读
+                                        <a href="#">服务条款</a>
+                                        <span style="font-size: 12px; color: #a8a8a8">|</span>
+                                        <a href="#">常见问题</a>
+                                        <span style="display: inline-block; margin-left: 100px;">208元</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="border-top: none;">
+                            <span class="main-accident-span"></span>
+                            <img src="imges/img_3.png" height="100" width="100"/>
+                            <div class="main-accident-top-li-div">
+                                <h2 class="main-accident-top-h2">
+                                    云空间年卡50G<span>58元</span>
+                                </h2>
+                                <p style="font-size: 12px; color: #a8a8a8; margin: 10px 0;">主商品签收后，自动激活至下单帐号</p>
+                                <div class="main-accident-top-li-div-div">
+                                    <p style="font-size: 16px; font-family: '宋体';">
+                                        <span class="main-accident-span2" ></span>
+                                        我已阅读
+                                        <a href="#">服务条款</a>
+                                        <span style="font-size: 12px; color: #a8a8a8">|</span>
+                                        <a href="#">常见问题</a>
+                                        <span style="display: inline-block; margin-left: 100px;">58元</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="border-top: none;">
+                            <span class="main-accident-span"></span>
+                            <img src="imges/img_3.png" height="100" width="100"/>
+                            <div class="main-accident-top-li-div">
+                                <h2 class="main-accident-top-h2">
+                                    云空间月卡200G<span>21元</span>
+                                </h2>
+                                <p style="font-size: 12px; color: #a8a8a8; margin: 10px 0;">主商品签收后，自动激活至下单帐号</p>
+                                <div class="main-accident-top-li-div-div">
+                                    <p style="font-size: 16px; font-family: '宋体';">
+                                        <span class="main-accident-span2" ></span>
+                                        我已阅读
+                                        <a href="#">服务条款</a>
+                                        <span style="font-size: 12px; color: #a8a8a8">|</span>
+                                        <a href="#">常见问题</a>
+                                        <span style="display: inline-block; margin-left: 100px;">21元</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="border-top: none;">
+                            <span class="main-accident-span"></span>
+                            <img src="imges/img_3.png" height="100" width="100"/>
+                            <div class="main-accident-top-li-div">
+                                <h2 class="main-accident-top-h2">
+                                    云空间月卡50G<span>6元</span>
+                                </h2>
+                                <p style="font-size: 12px; color: #a8a8a8; margin: 10px 0;">主商品签收后，自动激活至下单帐号</p>
+                                <div class="main-accident-top-li-div-div">
+                                    <p style="font-size: 16px; font-family: '宋体';">
+                                        <span class="main-accident-span2" ></span>
+                                        我已阅读
+                                        <a href="#">服务条款</a>
+                                        <span style="font-size: 12px; color: #a8a8a8">|</span>
+                                        <a href="#">常见问题</a>
+                                        <span style="display: inline-block; margin-left: 100px;">6元</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    </div>
+                </div>
+<!--                总共价格-->
+                <div class="main-price">
+                    <ul>
+                        <li>
+                            Redmi 10X 5G 6GB+ 128GB 胧月金
+                            <span>1399元<del style="font-size: 12px;">&nbsp;1799元</del></span>
+                        </li>
+                    </ul>
+                    <div class="main-price-all">
+                        总计：1399元
+                    </div>
+                </div>
+<!--                购买按钮-->
+                <div class="main-buy">
+                    <div class="main-buy-a1"><a href="#">加入购物车</a></div>
+                    <div class="main-buy-a2"><a href="#">喜欢</a></div>
+                </div>
+                <!--    页脚上方导航栏-->
+
+                <div class="main-sale">
+                    <span><a href="#">小米自营</a></span>
+                    <span><a href="#">小米发货</a></span>
+                    <span><a href="#">7天无理由退货</a></span>
+                    <span><a href="#">收费说明</a></span>
+                    <span><a href="#">企业信息</a></span>
+                    <span><a href="#">售后服务</a></span>
+                    <span><a href="#">政策7天价格保护</a></span>
+                </div>
+            </div>
+          </div>
+            <div class="protect">
+                <div class="protect-div">
+                    <h3>价格说明</h3>
+                    <img src="imges/img_4.png" height="189" width="1226"/>
+                </div>
+            </div>
+        <div class="footer-top">
+            <ul>
+                <li><a href="#"><span></span>预约维修服务</a></li>
+                <li><a href="#"><span></span>七天无理由退货</a></li>
+                <li><a href="#"><span></span>15天免费换货</a></li>
+                <li><a href="#"><span></span>满99包邮</a></li>
+                <li><a href="#"><span></span>520余家售后网点</a></li>
+            </ul>
+            <hr>
+        </div>
+        <!--    页脚下方导航栏-->
+        <div class="footer-bottom">
+            <dl>
+                <dt><a href="#">帮助中心</a></dt>
+                <dd><a href="#">账户管理</a></dd>
+                <dd><a href="#">购物指南</a></dd>
+                <dd><a href="#">订单操作</a></dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#">服务支持</a></dt>
+                <dd><a href="#">售后政策</a></dd>
+                <dd><a href="#">自助服务</a></dd>
+                <dd><a href="#">相关下载</a></dd>
+            </dl>
+            <dl>
+                <dt><a href="#">线下门店</a></dt>
+                <dd><a href="#">小米之家</a></dd>
+                <dd><a href="#">服务网点</a></dd>
+                <dd><a href="#">授权体验店</a></dd>
+            </dl>
+            <dl>
+                <dt><a href="#">关于小米</a></dt>
+                <dd><a href="#">了解小米</a></dd>
+                <dd><a href="#">加入小米</a></dd>
+                <dd><a href="#">投资者关系</a></dd>
+                <dd><a href="#">廉洁举报</a></dd>
+            </dl>
+            <dl>
+                <dt><a href="#">关注我们</a></dt>
+                <dd><a href="#">新浪微博</a></dd>
+                <dd><a href="#">官方微信</a></dd>
+                <dd><a href="#"> 联系我们</a></dd>
+            </dl>
+            <dl>
+                <dt><a href="#">特色服务</a></dt>
+                <dd><a href="#">F 码通道</a></dd>
+                <dd><a href="#">礼物码</a></dd>
+                <dd><a href="#">防伪 查询</a></dd>
+            </dl>
+            <div class="relation">
+                <div class="relation-center">
+                    <div class="relation-center-top">
+                        <p>400-100-5678</p>
+                        <p>8:00-18:00（仅收市话费）</p>
+                    </div>
+                    <a class="relation-a" href="#">人工客服</a>
+                    <div class="relation-bottom">
+                        关注小米:
+                        <a href="#">
+                        </a>
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </div>
+    </div>
+
+</div>
+<div class="equity-top">
+    <div class="equity">
+        <div class="equity-img">
+            <img src="imges/logo-footer.png" height="49" width="49"/>
+        </div>
+        <div class="equity-nav">
+            <p>
+                <a href="#">小米商城</a><span>|</span>
+                <a href="#">MIUI</a><span>|</span>
+                <a href="#">米家</a><span>|</span>
+                <a href="#">米聊</a><span>|</span>
+                <a href="#">多看</a><span>|</span>
+                <a href="#">游戏</a><span>|</span>
+                <a href="#">路由器</a><span>|</span>
+                <a href="#">米粉卡</a><span>|</span>
+                <a href="#">政企服务</a><span>|</span>
+                <a href="#">问题反馈</a><span>|</span>
+                <a href="#">小米天猫店</a><span>|</span>
+                <a href="#">小米集团隐私政策</a><span>|</span>
+                <a href="#">小米商城隐私政策</a><span>|</span>
+                <a href="#">小米商城用户协议</a>
+            </p>
+            <p>
+                <a href="#">© mi.com</a> 京ICP证110507号<a href="#">京ICP备10046444号</a> <a href="#">京公网安备11010802020134号</a>
+                <a href="#">京网文[2020]0276-042号</a> <a href="#">（京）网械平台备字（2018）第00005号 </a>
+                <a href="#">互联网药品信息服务资格证</a> <a href="#">(京) -非经营性-2014-0090</a> <a href="#">营业执照</a> <a href="#">医疗器械公告</a>
+                <a href="#">增值电信业务许可证</a>  网络食品经营备案 京食药网食备202010048 <a href="#">食品经营许可证</a>
+                违法和不良信息举报电话：171-5104-4404 <a href="#">知识产权侵权投诉</a> 本网站所列数据，除特殊说明，所有数据均出自我司实验室测试
+            </p>
+        </div>
+    </div>
+    <div class="equity-bottom">
+
+        <a href="#"><img src="imges/v-logo-1.png" height="28" width="85"/></a>
+        <a href="#"><img src="imges/v-logo-2_1.png" height="28" width="85"/></a>
+        <a href="#"><img src="imges/icon3.png" height="28" width="85"/></a>
+        <a href="#"><img src="imges/truste.png" height="28" width="85"/></a>
+    </div>
+    <p class="end"><img src="imges/slogan2020.png" height="21" width="368"/></p>
+</div>
+</body>
+</html>

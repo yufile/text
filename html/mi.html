@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--适用手机端-->
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../css/mi.css">
+    <script src="../js/mi.js"></script>
+
+</head>
+<body class="bg">
+<header class="img1">
+
+</header>
+<nav class="ms">
+    <p class="navP">
+        <ul class="navP_UL" >
+           <li class="ul_li1"><a href=mi.html>小米商城</a><span>|</span></li>
+           <li><a href="#">MIUI</a><span>|</span></li>
+           <li><a href="#">IoT</a><span>|</span></li>
+           <li><a href="#">云服务</a><span>|</span></li>
+           <li><a href="#">天星数科</a><span>|</span></li>
+           <li><a href="#">有品</a><span>|</span></li>
+           <li><a href="#">小爱开放平台</a><span>|</span></li>
+           <li><a href="#">企业团购</a><span>|</span></li>
+           <li><a href="#">资质证照</a><span>|</span></li>
+           <li><a href="#">协议规则</a><span>|</span></li>
+           <li id="app_li">
+               <a href="#" >下载app</a><span>|</span>
+
+           <div id="app">
+               <div id="san"></div>
+               <img src="../imgs/download.png" height="60" width="60"/>
+           </div>
+           </li>
+           <li><a href="#">智能生活</a><span>|</span></li>
+           <li><a href="#">Select Location</a></li>
+           <li class="ul_li"><a href="#">登录</a><span>|</span></li>
+           <li><a href="#">注册</a><span>|</span></li>
+           <li><a href="#">消息通知</a></li>
+           <li class="ul_li2" id="ul_li2">
+               <a id="ul_li2_a" href="#">🛒购物车（0）</a>
+               <div id="ul_a_box">
+               </div>
+           </li>
+
+        </ul>
+
+    </p>
+</nav>
+<!--菜单js-->
+<script>
+    var ul_a_box = document.getElementById("ul_a_box");
+    var ul_li2 = document.getElementById("ul_li2");
+    var ul_li2_a = document.getElementById("ul_li2_a");
+    ul_li2.onmousemove = function (){
+        ul_a_box.style.display = "block";
+        ul_a_box.innerHTML = "购物车中还没有东西，快去添加吧";
+        ul_li2.style.backgroundColor ="aliceblue";
+        ul_li2_a.style.color = "coral";
+        ul_li2.onmouseout = function (){
+            ul_a_box.style.display = "none";
+            ul_li2.style.backgroundColor ="";
+            ul_li2_a.style.color = "";
+        }
+    }
+</script>
+
+<nav class="nav1">
+<div class="home">
+</div>
+    <ul class="nav1_ul">
+        <li id="phone_li">
+            <a href="#">小米手机</a>
+            <div id="phone_div">
+            <ul id="phone_ul">
+                <li><a href="#"><img src="../imgs/phone.webp" height="137" width="200"/><span class="phone_span">小米11<br><span class="phone_span1">3999元起</span></span></a></li>
+                <li><a href="#"><img src="../imgs/phone1.webp" height="137" width="200"/><span class="phone_span">小米10至尊纪念版<br><span class="phone_span1">5299元起</span></span></a></li>
+                <li><a href="#"><img src="../imgs/phone2.webp" height="137" width="200"/><span class="phone_span">小米10<br><span class="phone_span1">3399元起</span></span></a></li>
+                <li><a href="#"><img src="../imgs/phone4.webp" height="137" width="200"/><span class="phone_span">3399元起<br><span class="phone_span1">2099元起</span></span></a></li>
+                <li><a href="#"><img src="../imgs/phone5.webp" height="137" width="200"/><span class="phone_span">小米MIX Alpha<br><span class="phone_span1">19999元</span></span></a></li>
+            </ul>
+            </div>
+        </li>
+        <li><a href="#">Redmi 红米</a></li>
+        <li><a href="#">电视</a></li>
+        <li><a href="#">笔记本</a></li>
+        <li><a href="#">家电</a></li>
+        <li><a href="#">路由器</a></li>
+        <li><a href="#">智能硬件</a></li>
+        <li><a href="#">服务</a></li>
+        <li><a href="#">社区</a></li>
+    </ul>
+<ul class="nav1_ul1">
+    <li class="nav1_ul_li" id="ss_ul_li"><a href="#">🔍</a></li>
+    <li class="nav1_ul_li1 b1"  id="ss_ul_li1">
+        <input id="input_1" type="text" name="use" maxlength="10" placeholder="手机" style=" width: 250px; height: 45px; border: none; padding-left: 10px;" >
+         <div id="ss_div">
+             <ul id="ss_ul">
+                 <li><a href="#">小米11</a></li>
+                 <li><a href="#">小米10</a></li>
+                 <li><a href="#">全部商品</a></li>
+                 <li><a href="#">红米</a></li>
+                 <li><a href="#">耳机</a></li>
+                 <li><a href="#">净水器</a></li>
+                 <li><a href="#">洗衣机</a></li>
+                 <li><a href="#">路由器</a></li>
+             </ul>
+         </div>
+    </li>
+</ul>
+
+</nav>
+
+
+<main class="ma">
+    <address class="add">
+        <ul class="add_ul">
+            <li class="one" id="active-li"><a href="#">手机 电话卡<span class="sp1"></span></a></li>
+            <li><a href="#">电视 盒子<span></span></a></li>
+            <li><a href="#">笔记本 显示器<span class="sp3"></span></a></li>
+            <li><a href="#">家电 插线板<span class="sp4"></span></a></li>
+            <li><a href="#">出行 穿戴<span></span></a></li>
+            <li><a href="#">电源 配件<span></span></a></li>
+            <li><a href="#">健康 儿童<span></span></a></li>
+            <li><a href="#">耳机 音箱<span></span></a></li>
+            <li><a href="#">生活 箱包<span></span></a></li>
+
+        </ul>
+    </address>
+<!--  图片显示-->
+    <script>
+        var phone_li =document.getElementById("phone_li");
+        var phone_div = document.getElementById("phone_div");
+
+            phone_li.onmousemove = function (){
+                phone_div.style.display="block";
+            }
+            phone_li.onmouseout = function (){
+                phone_div.style.display ="none";
+
+        };
+
+    </script>
+    <aside class="as">
+        <div id="carousel">
+            <div class="left">
+                <a href="#"></a>
+            </div>
+            <div class="right">
+                <a href="#"></a>
+            </div>
+            <ul id="carousel_ul">
+               <li><img src="../imgs/mitu1.jpg" height="490" width="1040" alt="mitu1"/></li>
+               <li><img src="../imgs/mitu3.jpg" height="490" width="1040"/></li>
+               <li><img src="../imgs/mitu4.jpg" height="490" width="1040"/></li>
+                <li><img src="../imgs/mitu01.jpg" height="490" width="1040"/></li>
+                <li><img src="../imgs/mitu1.jpg" height="490" width="1040"/></li>
+            </ul>
+            <div id="navA"  >
+                <a href="javascript:"></a>
+                <a href="javascript:"></a>
+                <a href="javascript:"></a>
+                <a href="javascript:"></a>
+            </div>
+        </div>
+
+    </aside>
+    <!-- 图片自动切换-->
+    <!--    设置搜索框-->   <!--app图片显示-->
+    <script>
+        window.onload =function (){
+            var navA = document.getElementById("navA");
+            var carousel = document.getElementById("carousel")
+            var imgs = carousel.getElementsByTagName("img");
+            var carousel_ul = document.getElementById("carousel_ul");
+            var Alink = navA.getElementsByTagName("a");
+            var index = 0;
+            //设置超链接位置
+            navA.style.left = (carousel.offsetWidth-navA.offsetWidth)/2 +"px";
+            //设置图片ul宽度
+            carousel_ul.style.width = 1040*(imgs.length)+"px";
+            //默认第一个超链接颜色
+            Alink[index].style.backgroundColor = "#25d2d2";
+
+            for(var i = 0;i<Alink.length;i++){
+                Alink[i].num = i;
+                Alink[i].onclick =function (){
+                    //如果使用点击切换图片 子自动轮播暂停 等代码执行完重新开启
+                    clearInterval(timer);
+                    index = this.num;
+                    setColor();
+                    move(carousel_ul,20,-1040*index,"left",function (){
+                        start();
+                    });
+                }
+            }
+
+
+            //设置超链接颜色
+            function setColor(){
+                if(index>=imgs.length-1){
+                    index = 0;
+                    carousel_ul.style.left= 0 + "px";
+                }
+                for(var i =0;i<Alink.length;i++){
+                    Alink[i].style.backgroundColor="";
+                }
+                Alink[index].style.backgroundColor ="#25d2d2";
+            }
+
+            //调用start()
+            start();
+            // 图片自动轮播函数
+            var timer;
+            function start(){
+
+                timer = setInterval(function (){
+                    index++;
+                    if(index==imgs.length){
+                        index = 0;
+                    }
+                    move(carousel_ul,20,-1040*index,"left",function (){
+                        setColor();
+                    });
+                },4000);
+            }
+        };
+        <!--    设置搜索框-->   <!--app图片显示-->
+        var input_1 = document.getElementById("input_1");
+        var arr = ["手机","电视","路由器","充电宝","耳机","充电器"];
+        var ss_ul = document.getElementById("ss_ul").getElementsByTagName("li");
+        var ss_div = document.getElementById("ss_div");
+        var ss_ul_li = document.getElementById("ss_ul_li");
+        var ss_ul_li1 = document.getElementById("ss_ul_li1");
+        for(var i = 0;i<ss_ul.length;i++ ){
+            ss_ul[i].num = i;
+            ss_ul[i].onmousemove = function (){
+                ss_ul[this.num].style.backgroundColor="yellow";
+
+            };
+            ss_ul[i].onmouseout = function (){
+                ss_ul[this.num].style.backgroundColor="";
+            };
+        }
+        input_1.onclick = function (){
+            ss_div.style.display = "block";
+            ss_ul_li1.style.border = "none";
+            ss_ul_li1.style.border = "coral 1px solid";
+            ss_ul_li.style.border = "none";
+            ss_ul_li.style.border = "coral 1px solid";
+            ss_ul_li.style.borderLeft = "none";
+
+        }
+        input_1.onblur = function (){
+            ss_div.style.display = "none";
+            ss_ul_li1.style.border = "none";
+            ss_ul_li1.style.border = "#3e3e3e 1px solid";
+            ss_ul_li.style.border = "none";
+            ss_ul_li.style.border = "#3e3e3e 1px solid";
+            ss_ul_li.style.borderLeft = "none";
+        }
+        var index=0;
+        setInterval(function (){
+            index++;
+            if(index>arr.length){
+                index = 0;
+            }
+            switch(index) {
+                case 0:
+                    input_1.setAttribute("placeholder",arr[index]);
+                    break;
+                case 1:
+                    input_1.setAttribute("placeholder",arr[index]);
+                    break;
+                case 2:
+                    input_1.setAttribute("placeholder",arr[index]);
+                    break;
+                case 3:
+                    input_1.setAttribute("placeholder",arr[index]);
+                    break;
+                case 4:
+                    input_1.setAttribute("placeholder",arr[index]);
+                    break;
+                case 5:
+                    input_1.setAttribute("placeholder",arr[index]);
+                    break;
+            }
+        },3000);
+
+        <!--app图片显示-->
+        var app_li = document.getElementById("app_li");
+        var appS = document.getElementById("app");
+        window.show(app_li,appS);
+
+
+
+    </script>
+    <address class="add2">
+        <ul class="add2_ul">
+            <li><a href="#">小米秒杀</a></li>
+            <li><a href="#">企业团购</a></li>
+            <li><a href="#">F码通道</a></li>
+            <li class="add2_ul_li4"><a href="#">米粉卡</a></li>
+            <li class="add2_ul_li5"><a href="#">以旧换新</a></li>
+            <li><a href="#">话费充值</a></li>
+        </ul>
+
+        <a href="#" class="add2_a1"><img src="../imgs/mitu6.jpg" height="188" width="320"/></a>
+    </address>
+    <aside class="as2">
+
+        <a href="#" class="as2_a1"><img src="../imgs/mitu7.jpg" height="188" width="320"/></a>
+        <a href="#" class="as2_a2"><img src="../imgs/miyu8.jpg" height="188" width="320"/></a>
+    </aside>
+</main>
+<main class="ma1">
+    <address class="ma1_add">
+        <h2>小米闪购</h2>
+        <ul class="ma1_add_ul">
+            <li class="ma1_add_ul_li1">
+                <p class="li_p1">22:00 场</p>
+                <img src="../imgs/mitu13.jpg" height="53" width="34"/>
+                <p class="li_p2">距离结束还有</p>
+               <p class="li_p3">
+                   <span class="time1">01</span>
+                   <span>:</span>
+                   <span class="time1">00</span>
+                   <span>:</span>
+                   <span class="time1">00</span>
+               </p>
+            </li>
+            <li class="ma1_add_ul_li2">
+                <p class="li2_p1"><img src="../imgs/mitu9.jpg" height="250" width="250"/></p>
+                <p class="li2_p2">小爱老师 4G版 白色</p>
+                <p class="li2_p3">英语提分神器</p>
+                <p class="li2_p4">799元<span> 999元</span></p>
+            </li>
+            <li class="ma1_add_ul_li3">
+                <p class="li2_p1"><img src="../imgs/mitu10.jpg" height="250" width="250"/></p>
+                <p class="li2_p2">小米充电宝 黑色</p>
+                <p class="li2_p3">续航神器</p>
+                <p class="li2_p4">69元<span> 99元</span></p>
+            </li>
+            <li class="ma1_add_ul_li4">
+                <p class="li2_p1"><img src="../imgs/mitu11.jpg" height="250" width="250"/></p>
+                <p class="li2_p2">小米无线鼠标 黑色</p>
+                <p class="li2_p3">磨砂材质</p>
+                <p class="li2_p4">59元<span> 119元</span></p>
+            </li>
+            <li class="ma1_add_ul_li5">
+                <p class="li2_p1"><img src="../imgs/mitu12.png" height="250" width="250"/></p>
+                <p class="li2_p2">小米Air笔记本12.5"2019款...</p>
+                <p class="li2_p3">像杂志一样随身携带</p>
+                <p class="li2_p4">3499元<span> 3999元</span></p>
+            </li>
+
+        </ul>
+    </address>
+    <aside class="as3">
+
+        <a href="#"><img src="../imgs/mitu14.jpg" height="150" width="1320"/></a>
+
+    </aside>
+
+    <address class="ma1_add1">
+        <h1>手机</h1>
+    <a class="img2" href="#"><img  src="../imgs/mitu16.jpg" height="700" width="292"/></a>
+        <ul class="ma1_add1_ul">
+
+            <a class="img2" href="#"><li class="ma1_add1_ul_li2">
+                <p class="li2_p1"><img src="../imgs/mitu17.jpg" height="190" width="190"/></p>
+                <p class="li2_p2">Note 9 Pro</p>
+                <p class="li2_p3">一亿像素夜景相机, 120Hz六档变速...</p>
+                <p class="li2_p4">1599元起</p>
+            </li>
+            </a>
+            <a href="#"> <li class="ma1_add1_ul_li3">
+                <p class="li2_p1"><img src="../imgs/mitu18.jpg" height="190" width="190"/></p>
+                <p class="li2_p2">Note 9</p>
+                <p class="li2_p3">天玑 800U处理器, 5000mAh电池,</p>
+                <p class="li2_p4">1299元起</p>
+            </li>
+            </a>
+            <a href="#"><li class="ma1_add1_ul_li4">
+                <p class="li2_p1"><img src="../imgs/mitu22.jpg" height="190" width="190"/></p>
+                <p class="li2_p2">Note 9 4G</p>
+                <p class="li2_p3">6000mAh长续航</p>
+                <p class="li2_p4">999元起</p>
+            </li>
+            </a>
+            <a href="#"><li class="ma1_add1_ul_li5">
+                <p class="li2_p1"><img src="../imgs/mitu19.webp" height="190" width="190"/></p>
+                <p class="li2_p2">小米10 至尊版</p>
+                <p class="li2_p3">120X/变焦/120W/秒冲/120Hz屏幕</p>
+                <p class="li2_p4">5299元起</p>
+            </li>
+            </a>
+
+        </ul>
+
+        <ul class="ma1_add1_ul">
+
+            <a href="#"><li class="ma1_add1_ul_li2">
+                <p class="li2_p1"><img src="../imgs/mitu23.jpg" height="190" width="190"/></p>
+                <p class="li2_p2">Redmi K30S 至尊纪念版</p>
+                <p class="li2_p3">144Hz[7档]变速高刷屏</p>
+                <p class="li2_p4">2599元起</p>
+            </li>
+            </a>
+            <a href="#"> <li class="ma1_add1_ul_li3">
+                <p class="li2_p1"><img src="../imgs/mitu24.jpg" height="190" width="190"/></p>
+                <p class="li2_p2">Redmi K30 至尊版</p>
+                <p class="li2_p3">120Hz弹出全面屏, 天玑 1000+旗舰处...</p>
+                <p class="li2_p4">1999元起</p>
+            </li>
+            </a>
+            <a href="#"><li class="ma1_add1_ul_li4">
+                <p class="li2_p1"><img src="../imgs/mitu21.jpg" height="190" width="190"/></p>
+                <p class="li2_p2">腾讯黑鲨3S</p>
+                <p class="li2_p3">骁龙865处理器, 129Hz刷新率</p>
+                <p class="li2_p4">3999元起</p>
+            </li>
+            </a>
+            <a href="#"><li class="ma1_add1_ul_li5">
+                <p class="li2_p1"><img src="../imgs/mitu20.jpg" height="190" width="190"/></p>
+                <p class="li2_p2">Redmi 9A</p>
+                <p class="li2_p3">5000mAh循环大电量, 6.53"超大护...</p>
+                <p class="li2_p4">599元起</p>
+            </li>
+            </a>
+
+        </ul>
+
+</address>
+    <aside class="ma1_as4">
+
+        <a href="#"><img src="../imgs/mitu25.jpg" height="150" width="1320"/></a>
+    </aside>
+    <address class="ma1_add2">
+        <h2>家电</h2>
+        <p class="ma1_add2_p"><a href="#"><span class="ma1_add2_sp">热门</span></a>
+            <span> &nbsp;&nbsp;&nbsp;</span>
+        <a href="#"><span class="ma1_add2_sp">电视影音</span></a>
+        </span>
+            </p>
+        <ul class="ma1_add2_ul">
+           <a href="#"><li class="ma1_add2_ul_li1">
+
+                <img src="../imgs/mitu26.jpg" height="320" width="250"/>
+
+            </li>
+           </a>
+            <a href="#"><li class="ma1_add2_ul_li2">
+                <p class="li2_p1"><img src="../imgs/mitu27.jpg" height="150" width="150"/></p>
+                <p class="li2_p2">全面屏电视 55英寸E55X</p>
+                <p class="li2_p3">潮流全面屏设计</p>
+                <p class="li2_p4">2399元</p>
+
+            </li>
+            </a>
+            <a href="#"><li class="ma1_add2_ul_li3">
+                <p class="li2_p1"><img src="../imgs/mitu28.jpg" height="150" width="150"/></p>
+                <p class="li2_p2">小米全面屏电视65英寸 E65C</p>
+                <p class="li2_p3">震撼大屏, 时尚全面屏</p>
+                <p class="li2_p4">2999元<span> 3099元</span></p>
+            </li>
+                </a>
+            <a href="#"><li class="ma1_add2_ul_li4">
+                <p class="li2_p1"><img src="../imgs/mitu31.webp" height="150" width="150"/></p>
+                <p class="li2_p2">小米全面屏电视E32C</p>
+                <p class="li2_p3">全面屏设计, 人工智能系统</p>
+                <p class="li2_p4">899元<span> 999元</span></p>
+            </li>
+            </a>
+           <a href="#"><li class="ma1_add2_ul_li5">
+                <p class="li2_p1"><img src="../imgs/mitu30.jpg" height="150" width="150"/></p>
+                <p class="li2_p2">小米电视4S 75英寸</p>
+                <p class="li2_p3">4K HDR, 人工智能语音</p>
+                <p class="li2_p4">4499元<span> 5999元</span></p>
+            </li>
+           </a>
+
+        </ul>
+        <ul class="ma1_add2_ul1">
+            <a href="#"><li class="ma1_add2_ul1_li1">
+
+                <img src="../imgs/mitu29.jpg" height="320" width="250"/>
+
+            </li>
+            </a>
+            <a href="#"><li class="ma1_add2_ul1_li2">
+                <p class="li2_p1"><img src="../imgs/mitu32.jpg" height="150" width="150"/></p>
+                <p class="li2_p2">小米电视4A 70英寸</p>
+                <p class="li2_p3">大屏更享受</p>
+                <p class="li2_p4">3399元<span>&nbsp; 3999元</span></p>
+
+            </li>
+            </a>
+            <a href="#"><li class="ma1_add2_ul1_li3">
+                <p class="li2_p1"><img src="../imgs/mitu33.jpg" height="150" width="150"/></p>
+                <p class="li2_p2">小米电视4C 32英寸</p>
+                <p class="li2_p3">高清液晶屏, 人工智能系统</p>
+                <p class="li2_p4">849元 <span> &nbsp;999元</span></p>
+            </li>
+            </a>
+            <a href="#"><li class="ma1_add2_ul1_li4">
+                <p class="li2_p1"><img src="../imgs/mitu34.jpg" height="150" width="150"/></p>
+                <p class="li2_p2">小米电视4C 43英寸</p>
+                <p class="li2_p3">全面屏设计, 人工智能系统</p>
+                <p class="li2_p4">899元<span>&nbsp; 999元</span></p>
+            </li>
+            </a>
+            <a href="#"><li class="ma1_add2_ul1_li5">
+                <p class="li2_p1"><img src="../imgs/mitu35.jpg" height="75" width="75"/>
+                <p class="li2_p2">小米盒子4c<br/><span>199元</span></p>
+
+                </p>
+            </li>
+            </a>
+            <a href="#">
+                <li class="ma1_add2_ul1_li6">
+                   <p class="p1"> <img src="../imgs/mitu37.jpg" height="50" width="50"/></p>
+                    <p class="p2">浏览更多<br/><span>热门</span></p>
+                </li>
+            </a>
+        </ul>
+    </address>
+    <aside class="ma1_as5">
+
+        <a href="#"><img src="../imgs/mitu36.jpg" height="134" width="1320"/></a>
+    </aside>
+    <address class="ma1_add2">
+        <h2>智能</h2>
+        <p class="ma1_add2_p"><a href="#"><span class="ma1_add2_sp">热门</span></a>
+            <span> &nbsp;&nbsp;&nbsp;</span>
+            <a href="#"><span class="ma1_add2_sp">安防</span></a>
+            <span> &nbsp;&nbsp;&nbsp;</span>
+            <a href="#"><span class="ma1_add2_sp">出行</span></a>
+            </span>
+        </p>
+        <ul class="ma1_add2_ul">
+            <a href="#"><li class="ma1_add2_ul_li1">
+
+                <img src="../imgs/mitu38.jpg" height="320" width="250"/>
+
+            </li>
+            </a>
+            <a href="#"><li class="ma1_add2_ul_li2">
+                <p class="li2_p1"><img src="../imgs/mitu9.jpg" height="150" width="150"/></p>
+                <p class="li2_p2">小米「小爱老师」</p>
+                <p class="li2_p3">英语提分利器</p>
+                <p class="li2_p4">999元</p>
+
+            </li>
+            </a>
+            <a href="#"><li class="ma1_add2_ul_li3">
+                <p class="li2_p1"><img src="../imgs/mitu44.jpg" height="150" width="150"/></p>
+                <p class="li2_p2">小米小爱音箱 Play</p>
+                <p class="li2_p3">听音乐、语音遥控家电</p>
+                <p class="li2_p4">99元<span>&nbsp;169元</span></p>
+            </li>
+            </a>
+            <a href="#"><li class="ma1_add2_ul_li4">
+                <p class="li2_p1"><img src="../imgs/mitu39.jpg" height="150" width="150"/></p>
+                <p class="li2_p2">米家智能窗帘</p>
+                <p class="li2_p3">窗帘开合随心控 </p>
+                <p class="li2_p4">799元</p>
+            </li>
+            </a>
+            <a href="#">
+                <li class="ma1_add2_ul_li5">
+                <p class="li2_p1"><img src="../imgs/mitu42.jpg" height="150" width="150"/></p>
+                <p class="li2_p2">小米体脂秤2</p>
+                <p class="li2_p3">轻松掌握身体脂肪率</p>
+                <p class="li2_p4">99元</p>
+            </li>
+            </a>
+
+        </ul>
+        <ul class="ma1_add2_ul1">
+            <a href="#"><li class="ma1_add2_ul1_li1">
+
+                <img src="../imgs/mitu43.jpg" height="320" width="250"/>
+
+            </li>
+            </a>
+            <a href="#"><li class="ma1_add2_ul1_li2">
+                <p class="li2_p1"><img src="../imgs/mitu46.jpg" height="150" width="150"/></p>
+                <p class="li2_p2">九号平衡车</p>
+                <p class="li2_p3">年轻人的酷玩具</p>
+                <p class="li2_p4">1999元</p>
+
+            </li>
+            </a>
+            <a href="#"><li class="ma1_add2_ul1_li3">
+                <p class="li2_p1"><img src="../imgs/mitu40.jpg" height="150" width="150"/></p>
+                <p class="li2_p2">小米智能门锁 推拉式</p>
+                <p class="li2_p3">一步推拉，高端智能门锁</p>
+                <p class="li2_p4">1699元</p>
+            </li>
+            </a>
+            <a href="#"><li class="ma1_add2_ul1_li4">
+                <p class="li2_p1"><img src="../imgs/mitu41.jpg" height="150" width="150"/></p>
+                <p class="li2_p2">Redmi小爱触屏音箱 8英寸</p>
+                <p class="li2_p3">超大屏，让智能更多可能</p>
+                <p class="li2_p4">349元</p>
+            </li>
+            </a>
+            <a href="#"><li class="ma1_add2_ul1_li5">
+                <p class="li2_p1"><img src="../imgs/mitu45.jpg" height="75" width="75"/>
+                <p class="li2_p2">小米手环5<br/><span>179元起</span></p>
+
+                </p>
+            </li>
+            </a>
+            <a href="#">
+                <li class="ma1_add2_ul1_li6">
+                    <p class="p1"> <img src="../imgs/mitu37.jpg" height="50" width="50"/></p>
+                    <p class="p2">浏览更多<br/><span>热门</span></p>
+                </li>
+            </a>
+        </ul>
+    </address>
+    <aside class="ma1_as5">
+
+        <a href="#"><img src="../imgs/mitu47.jpg" height="134" width="1320"/></a>
+    </aside>
+</main>
+
+<footer>
+
+    <span id="footer_sp">
+
+    <ul class="navP_UL" >
+        <li class=footer_img><img src="../imgs/mitu.jpg" height="60" width="60"/></li>
+        <li class="ul_li1"><a href="#">小米商城</a><span>|</span></li>
+        <li><a href="#">MIUI</a><span>|</span></li>
+        <li><a href="#">IoT</a><span>|</span></li>
+        <li><a href="#">云服务</a><span>|</span></li>
+        <li><a href="#">天星数科</a><span>|</span></li>
+        <li><a href="#">有品</a><span>|</span></li>
+        <li><a href="#">小爱开放平台</a><span>|</span></li>
+        <li><a href="#">企业团购</a><span>|</span></li>
+        <li><a href="#">小米集团隐私政策</a><span>|</span></li>
+        <li><a href="#">小米公司儿童信息保护规则</a><span>|</span></li>
+        <li><a href="#">资质证照</a><span>|</span></li>
+        <li><a href="#">协议规则</a><span>|</span></li>
+        <li><a href="#">下载app</a><span>|</span></li>
+        <li><a href="#">智能生活</a><span>|</span></li>
+        <li><a href="#">Select Location</a></li>
+
+    </ul>
+        <ul id="footer_ul">
+            <li><a href="#">北京互联网法院法律服务工作站</a><span>|</span></li>
+            <li><a href="#">中国消费者协会</a><span>|</span></li>
+            <li><a href="#">北京市消费者协会</a></li>
+        </ul>
+        </ul>
+        <ul class="footer_ul1">
+            <li><a href="#"><img src="../imgs/truste.png" height="28" width="85"/></a></li>
+            <li><a href="#"><img src="../imgs/v-logo-1.png" height="28" width="85"/></a></li>
+            <li><a href="#"><img src="../imgs/v-logo-2.png" height="28" width="85"/></a></li>
+            <li><a href="#"><img src="../imgs/安全.png" height="28" width="85"/></a></li>
+            <li><a href="#"><img src="../imgs/安全2.png" height="28" width="85"/></a></li>
+        </ul>
+    </span>
+    <p>让全球每个人都能享受科技带来的生活</p>
+</footer>
+
+</body >
+
+</html>

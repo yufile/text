@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*设置矢量图标*/
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?7kkyc2');
+            src: url('fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'),
+            url('fonts/icomoon.ttf?7kkyc2') format('truetype'),
+            url('fonts/icomoon.woff?7kkyc2') format('woff'),
+            url('fonts/icomoon.svg?7kkyc2#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body{
+            font-family: 'icomoon';
+        }
+        input{
+            font-family: icomoon;
+        }
+
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        /*设置导航栏背景颜色*/
+        .header{
+            width: 100%;
+            height: 40px;
+            background:#333333;
+        }
+        .header-tow{
+            width: 1226px;
+            height: 40px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-nav{
+            width: 685px;
+             height: 40px;
+             line-height: 40px;
+         }
+
+        .header-left{
+            margin-left: 260px;
+        }
+        /*取消a标签的默认间距*/
+        .header-nav a,.header-left a{
+            float: left;
+            font-size: 12px;
+        }
+        .header-nav a:link,.header-left a:link,.header-right a:link{
+            color: #B0B0B0B0;
+            text-decoration: none;
+        }
+        .header-left a:visited{
+            color: #B0B0B0B0;
+        }
+        .header-nav a:visited{
+            color: #B0B0B0B0;
+        }
+        .header-nav a:hover,.header-left a:hover{
+            color: white;
+        }
+        .header-nav a span,.header-left a span{
+            margin:0 0.5em ;
+           font-family: sans-serif;
+            color: #3e3e3e;
+        }
+        .header-right{
+            width: 120px;
+            height: 40px;
+        }
+        .header-right a{
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            background: #a8a8a8;
+            text-align: center;
+            font-size: 14px;
+            line-height: 40px;
+            position: relative;
+        }
+        /*设置购物框样式*/
+        .header-right a .fade-out{
+            width: 300px;
+            height: 0;
+            background: #dbdbdb;
+            position: absolute;
+            left: -180px;
+            transition: height .2s ease;
+        }
+        .header-right a:link{
+            color: #655959;
+        }
+        .header-right a:visited{
+            color: #655959;
+        }
+        .header-right a:hover .fade-out{
+            height: 150px;
+            box-shadow: 2px 2px 5px 2px #a8a8a8;
+        }
+        .header-right:hover {
+            height: 40px;
+        }
+        .header-right a:hover{
+            background: #dbdbdb;
+            color: #ffa500;
+        }
+    /*    设置结束*/
+        .header-bottom{
+            width: 100%;
+            height: 100px;
+        }
+        .header-bottom-center-one{
+            width: 1226px;
+            height: 100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-bottom-left{
+            width: 55px;
+            height: 55px;
+            background-color: #f86f0a;
+            background-image: url("imges/mi-logo.png"), url("imges/mi-home.png");
+            background-repeat: no-repeat;
+            background-position: 3px 3px,52px 3px;
+            transition: background-position .5s ease;
+        }
+        .header-bottom-left:hover{
+            background-position:-52px 3px ,3px 3px ;
+        }
+        .header-bottom-center ul li{
+            float: left;
+            margin-right: 20px;
+        }
+        .header-bottom-center ul li a:link{
+            color: #1f1b1b;
+            text-decoration: none;
+        }
+        .header-bottom-center ul li a:visited{
+            color: #1f1b1b;
+        }
+        .header-bottom-center ul li a:hover{
+            color: #ffa200;
+
+        }
+        .header-bottom-right .text{
+            width: 220px;
+            height: 35px;
+            border: 1px silver solid;
+            outline: none;
+        }
+        .header-bottom-right .sub{
+            width: 50px;
+            height: 37px;
+            margin-left: -10px;
+            border: 1px silver solid;
+            outline: none;
+            background-color: white ;
+        }
+        .header-bottom-right .sub:hover{
+           background-color: #ffa500;
+            color: white;
+        }
+        /*主题内容样式*/
+        .main{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .main-top{
+            width: 1226px;
+            height: 170px;
+            margin: 0 auto;
+
+        }
+        .main-top h1{
+            width: 100%;
+            height: 42px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .main-nav ul{
+            width:1224px ;
+            height: 68px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        .main-nav{
+
+            z-index: 99;
+        }
+        .main-nav ul li:not(:nth-child(1)) {
+            width: 239px;
+            height: 68px;
+            background: #363434;
+            float: left;
+            text-align: center;
+        }
+        .main-nav ul li a{
+            width: 245px;
+            height: 63px;
+            display: inline-block;
+            padding:5px 0 0 25px ;
+
+        }
+        .main-nav ul li a:link{
+            color: white;
+            text-decoration: none;
+
+        }
+        .main-nav ul li a:visited{
+            color: white;
+        }
+        .main-nav ul li:nth-of-type(1){
+            background: red;
+        }
+        .main-nav ul li a table td{
+           padding-left:10px ;
+        }
+        .main-nav ul li:not(:nth-of-type(1)) table{
+            line-height: 45px;
+            padding-left: 10px;
+        }
+        .main-section{
+            width: 1245px;
+            height: 812px;
+
+            margin: 0 auto;
+            position: relative;
+        }
+        .main-section ul{
+        }
+        .main-section ul li{
+            width: 400px;
+            height: 190px;
+            background: #e8e8e8;
+            float: left;
+            margin:0 0 10px 12px;
+
+        }
+        .main-section ul li a{
+            width:100%;
+            height: 100%;
+            z-index: 2;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .main-section ul li a:link{
+            color: #a8a8a8;
+            text-decoration: none;
+        }
+        .main-section-border{
+            position: relative;
+        }
+        .main-section ul li .main-section-border dt{
+            float: left;
+            margin-right: 15px;
+        }
+        .main-section ul li .main-section-border dl dd{
+          padding: 10px 0 5px 0;
+            position: relative;
+        }
+        .main-section ul li .main-section-border dl dd:nth-of-type(3){
+            padding: 0;
+        }
+        .main-section ul li .main-section-border dl dd:nth-of-type(1){
+
+        }
+        .main-section ul li .main-section-border dl dd:nth-of-type(3) span{
+            font-size: 14px;
+            position: absolute;
+           top: 5px;
+            margin-left: 2px;
+        }
+        .main-section ul li .main-section-border dl dd:nth-of-type(2){
+            font-size: 12px;
+            color: #a8a8a8;
+        }
+        .main-section ul li .main-section-border dl dd:nth-of-type(4){
+            color: #ffa500;
+        }
+        .main-section ul li .main-section-border dl dd:nth-of-type(4) span{
+            text-decoration: line-through;
+            font-size: 12px;
+            margin-left: 5px;
+            color: #a8a8a8;
+        }
+        .main-section ul li .main-section-border dl dd progress{
+            height: 8px;
+            width: 150px;
+        }
+        .main-section ul li .main-section-border dl dd:nth-of-type(5){
+            width: 100px;
+
+            background-color: red;
+            position: absolute;
+            top: 130px;
+            left: 218px;
+            text-align: center;
+            font-size: 14px;
+            color: white;
+
+        }
+        .main .main-footer{
+            width: 1226px;
+            height: 150px;
+            margin: 20px auto;
+            font-size: 12px;
+            color: #a8a8a8;
+        }
+        .footer{
+            width: 100%;
+            height: 227px;
+
+        }
+        .footer-top{
+            width: 1226px;
+            height: 80px;
+            margin: 0 auto;
+        }
+        .footer-top ul{
+            display: flex;
+            justify-content: space-around;
+        }
+        .footer-top ul li{
+            float: left;
+            margin-bottom: 30px;
+        }
+        .footer-top ul li a{
+            cursor: default;
+        }
+        .footer-top ul li a:link{
+            color: #a8a8a8;
+            text-decoration: none;
+        }
+        .footer-top ul li a:visited{
+            color: #a8a8a8;
+        }
+        .footer-top ul li a:hover{
+            color: #f56404;
+        }
+
+        .footer-top ul li span{
+            margin-right: 10px;
+        }
+        .footer-top ul li:after{
+            content: '|';
+            margin-left: 50px;
+            color: #a8a8a8;
+        }
+        .footer-top ul li:last-child:after{
+            content: '';
+        }
+        .footer-bottom{
+            width: 1226px;
+            height: 192px;
+            margin: 0 auto;
+        }
+        .footer-bottom dl{
+           float: left;
+            width: 160px;
+            height: 112px;
+        }
+        .footer-bottom dt{
+            font-size: 14px;
+        }
+        .footer-bottom dd{
+            font-size: 12px;
+            margin: 10px 0;
+        }
+        .footer-bottom dl a:link{
+            color: #a8a8a8;
+            text-decoration: none;
+        }
+        .footer-bottom dl dt a:link{
+          cursor: auto;
+        }
+        .footer-bottom dt a:visited{
+            color: #403939;
+        }
+        .footer-bottom dd a:visited{
+            color: #a8a8a8;
+        }
+        .footer-bottom dd a:hover{
+            color: #ffa500 ;
+        }
+        .relation{
+            width: 225px;
+            height: 112px;
+
+            float: right;
+            position: relative;
+        }
+        .relation .relation-center{
+            width: 225px;
+            height: 112px;
+        }
+        .relation .relation-center:before{
+              width: 1px;
+              height: 110px;
+              top: 0;
+              left: -20px;
+              z-index: 99;
+          }
+        .relation .relation-center:before{
+            content: '';
+            position: absolute;
+            background: #bebebf;
+        }
+        .relation-center p:first-child{
+            color: #ffa500;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .relation-center p:last-child{
+            color: #bbbbb9;
+            font-size: 12px;
+        }
+        .relation-center .relation-a{
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            border: 1px orange solid;
+            text-align: center;
+            line-height: 30px;
+            transition: color,background-color 1s ease;
+            margin: 15px;
+        }
+        .relation-center .relation-a:link{
+            color: #ffa500 ;
+            text-decoration: none;
+        }
+        .relation-center .relation-a:visited{
+            color: #ffa500;
+        }
+        .relation-center .relation-a:hover{
+            color: white;
+            background-color: #ffa500;
+
+        }
+        .relation-bottom{
+            width: 252px;
+            height: 21px;
+
+            border: 0;
+            font-size: 12px;
+            line-height: 21px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            margin-left: 10px;
+        }
+        .relation-bottom a:first-child{
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: url("imges/wb_1.png") 50% 0 no-repeat;
+            background-size: cover;
+            line-height: 24px;
+            margin-left: 2px;
+        }
+        .relation-bottom a:last-child{
+            display: inline-block;
+            width: 21px;
+            height: 21px;
+            background: url("imges/wx_1.png") 50% 0 no-repeat;
+            background-size: cover;
+            margin-left: 2px;
+        }
+        .relation-bottom a:last-child:hover{
+            background: url("imges/wx@2x_1.png") no-repeat;
+            background-size: cover;
+        }
+        .relation-bottom a:first-child:hover{
+            background: url("imges/wb@2x_1.png") no-repeat;
+            background-size: cover;
+        /*    background-size: cover把背景图扩展至足够大，直至完全覆盖背景区域*/
+        }
+        .equity-top{
+            width: 100%;
+            height: 100%;
+        }
+        .equity{
+            width: 1226px;
+            height: 90px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .equity-nav{
+            margin-top: 40px;
+            margin-left: 15px;
+        }
+        .equity-nav p{
+           margin-bottom: 10px;
+        }
+        .equity-nav p:first-child a:link{
+            color: #8b8989;
+            text-decoration: none;
+        }
+        .equity-nav p:first-child a:visited{
+            color: #8b8989;
+        }
+        .equity-nav p:first-child a:hover{
+            color: #ffa500;
+        }
+        .equity-nav span{
+            margin-left: 5px;
+            color: #c6c6c6;
+        }
+        .equity-nav p:last-child a:link{
+            color: #a8a8a8;
+            text-decoration: none;
+        }
+        .equity-nav p:last-child a:visited{
+            color: #a8a8a8;
+        }
+        .equity-nav p:last-child a:hover{
+            color: #ff7b05;
+        }
+        .equity-nav p:last-child{
+            color: #a8a8a8;
+            font-size: 12px;
+        }
+        .equity-bottom{
+            width: 1226px;
+            height: 28px;
+            margin: 50px auto 100px;
+        }
+        .equity-bottom a{
+            margin-left: 60px;
+        }
+        .equity-top .end{
+            width: 368px;
+            height: 21px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<!--头部导航-->
+<div class="header">
+    <div class="header-tow">
+        <div class="header-nav">
+            <a href="#">小米商城<span>|</span></a>
+            <a href="#"> MIUI<span>|</span></a>
+            <a href="#">IoT<span>|</span></a>
+            <a href="#">云服务<span>|</span></a>
+            <a href="#">天星数科<span>|</span></a>
+            <a href="#">有品<span>|</span></a>
+            <a href="#">小爱开放平台<span>|</span></a>
+            <a href="#">企业团购<span>|</span></a>
+            <a href="#">资质证照<span>|</span></a>
+            <a href="#">协议规则<span>|</span></a>
+            <a href="#">下载App<span>|</span></a>
+            <a href="#">智能生活</a>
+        </div>
+        <div class="header-left">
+            <a href="#">登录<span>|</span></a>
+            <a href="#"> 注册<span>|</span></a>
+            <a href="#">消息通知</a>
+        </div>
+        <div class="header-right">
+            <a href="#">
+                <span></span>&nbsp;购物车(0)
+                <div class="fade-out">
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<!--头部下方导航-->
+<div class="header-bottom">
+    <div class="header-bottom-center-one">
+        <div class="header-bottom-left"></div>
+        <div class="header-bottom-center">
+            <ul>
+                <li><a href="#"> 全部商品分类</a></li>
+                <li><a href="#">小米手机</a></li>
+                <li><a href="#">Redmi 红米</a></li>
+                <li><a href="#">电视</a></li>
+                <li><a href="#">笔记本</a></li>
+                <li><a href="#">家电</a></li>
+                <li><a href="#">路由器</a></li>
+                <li><a href="#">智能硬件</a></li>
+                <li><a href="#">服务</a></li>
+                <li><a href="#">社区</a></li>
+            </ul>
+        </div>
+        <div class="header-bottom-right">
+            <form method="get">
+                <input class="text" type="text" name="text"  placeholder="商品">
+                <input class="sub" type="submit" value="">
+            </form>
+        </div>
+    </div>
+</div>
+<!--内容主题-->
+<div class="main">
+    <div class="main-top">
+        <h1>小米秒杀</h1>
+    <!--    内容导航栏-->
+        <div class="main-nav" id="main-nav">
+            <ul>
+                <li>
+                    <a href="#">
+                        <table border="0" style="text-align: left;" cellspacing="6">
+                            <tr >
+                                <td rowspan="2" >10:00</td>
+                                <td>抢购中</td>
+                            </tr>
+                            <tr>
+                                <td>距结束1:00:00</td>
+                            </tr>
+                        </table>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <table border="0" style="text-align: left;" cellspacing="6">
+                            <tr >
+                                <td >14:00</td>
+                                <td>即将开始</td>
+                            </tr>
+                        </table>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <table border="0" style="text-align: left;" cellspacing="6">
+                            <tr >
+                                <td >14:00</td>
+                                <td>即将开始</td>
+                            </tr>
+                        </table>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <table border="0" style="text-align: left;" cellspacing="6">
+                            <tr >
+                                <td >14:00</td>
+                                <td>即将开始</td>
+                            </tr>
+                        </table>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <table border="0" style="text-align: left;" cellspacing="6">
+                            <tr >
+                                <td >14:00</td>
+                                <td>即将开始</td>
+                            </tr>
+                        </table>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+<!--    设置内容商品位置-->
+    <div class="main-section">
+            <ul>
+                <li>
+                        <a href="#"></a>
+                        <div class="main-section-border" >
+                        <dl>
+                            <dt>
+                                <img src="imges/c61933e7ac89c61bc727c275391e82e0.png" height="190" width="200"/>
+                            </dt>
+                            <dd>小米无线鼠标 Lite 黑色</dd>
+                            <dd>简约设计，轻盈握感</dd>
+                            <dd><progress value="80" max="100"></progress><span>80%</span></dd>
+                            <dd>29.00元<span>39元</span></dd>
+                            <dd>立即抢购</dd>
+
+                        </dl>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"></a>
+                    <div class="main-section-border" >
+                        <dl>
+                            <dt>
+                                <img src="imges/c61933e7ac89c61bc727c275391e82e0.png" height="190" width="200"/>
+                            </dt>
+                            <dd>小米无线鼠标 Lite 黑色</dd>
+                            <dd>简约设计，轻盈握感</dd>
+                            <dd><progress value="80" max="100"></progress><span>80%</span></dd>
+                            <dd>29.00元<span>39元</span></dd>
+                            <dd>立即抢购</dd>
+                        </dl>
+                    </div>
+                </li>
+                <li><a href="#"></a>
+                    <div class="main-section-border" >
+                        <dl>
+                            <dt>
+                                <img src="imges/c61933e7ac89c61bc727c275391e82e0.png" height="190" width="200"/>
+                            </dt>
+                            <dd>小米无线鼠标 Lite 黑色</dd>
+                            <dd>简约设计，轻盈握感</dd>
+                            <dd><progress value="80" max="100"></progress><span>80%</span></dd>
+                            <dd>29.00元<span>39元</span></dd>
+                            <dd>立即抢购</dd>
+
+                        </dl>
+                    </div></li>
+                <li><a href="#"></a>
+                    <div class="main-section-border" >
+                        <dl>
+                            <dt>
+
+                                <img src="imges/1db88cd66ff1a6a3e75116988b7f3e12.jpg" height="190" width="200"/></dt>
+                            <dd>小米无线鼠标 Lite 黑色</dd>
+                            <dd>简约设计，轻盈握感</dd>
+                            <dd><progress value="80" max="100"></progress><span>80%</span></dd>
+                            <dd>29.00元<span>39元</span></dd>
+                            <dd>立即抢购</dd>
+
+                        </dl>
+                    </div></li>
+                <li><a href="#"></a>
+                    <div class="main-section-border" >
+                        <dl>
+                            <dt>
+                                <img src="imges/c61933e7ac89c61bc727c275391e82e0.png" height="190" width="200"/>
+                            </dt>
+                            <dd>小米无线鼠标 Lite 黑色</dd>
+                            <dd>简约设计，轻盈握感</dd>
+                            <dd><progress value="80" max="100"></progress><span>80%</span></dd>
+                            <dd>29.00元<span>39元</span></dd>
+                            <dd>立即抢购</dd>
+
+                        </dl>
+                    </div></li>
+                <li><a href="#"></a>
+                    <div class="main-section-border" >
+                        <dl>
+                            <dt>
+                                <img src="imges/c61933e7ac89c61bc727c275391e82e0.png" height="190" width="200"/>
+                            </dt>
+                            <dd>小米无线鼠标 Lite 黑色</dd>
+                            <dd>简约设计，轻盈握感</dd>
+                            <dd><progress value="80" max="100"></progress><span>80%</span></dd>
+                            <dd>29.00元<span>39元</span></dd>
+                            <dd>立即抢购</dd>
+
+                        </dl>
+                    </div></li>
+                <li><a href="#"></a>
+                    <div class="main-section-border" >
+                        <dl>
+                            <dt>
+                                <img src="imges/c61933e7ac89c61bc727c275391e82e0.png" height="190" width="200"/>
+                            </dt>
+                            <dd>小米无线鼠标 Lite 黑色</dd>
+                            <dd>简约设计，轻盈握感</dd>
+                            <dd><progress value="80" max="100"></progress><span>80%</span></dd>
+                            <dd>29.00元<span>39元</span></dd>
+                            <dd>立即抢购</dd>
+
+                        </dl>
+                    </div></li>
+                <li><a href="#"></a>
+                    <div class="main-section-border" >
+                        <dl>
+                            <dt>
+                                <img src="imges/c61933e7ac89c61bc727c275391e82e0.png" height="190" width="200"/>
+                            </dt>
+                            <dd>小米无线鼠标 Lite 黑色</dd>
+                            <dd>简约设计，轻盈握感</dd>
+                            <dd><progress value="80" max="100"></progress><span>80%</span></dd>
+                            <dd>29.00元<span>39元</span></dd>
+                            <dd>立即抢购</dd>
+
+                        </dl>
+                    </div></li>
+                <li><a href="#"></a>
+                    <div class="main-section-border" >
+                        <dl>
+                            <dt>
+                                <img src="imges/c61933e7ac89c61bc727c275391e82e0.png" height="190" width="200"/>
+                            </dt>
+                            <dd>小米无线鼠标 Lite 黑色</dd>
+                            <dd>简约设计，轻盈握感</dd>
+                            <dd><progress value="80" max="100"></progress><span>80%</span></dd>
+                            <dd>29.00元<span>39元</span></dd>
+                            <dd>立即抢购</dd>
+
+                        </dl>
+                    </div></li>
+                <li><a href="#"></a>
+                    <div class="main-section-border" >
+                        <dl>
+                            <dt>
+                                <img src="imges/c61933e7ac89c61bc727c275391e82e0.png" height="190" width="200"/>
+                            </dt>
+                            <dd>小米无线鼠标 Lite 黑色</dd>
+                            <dd>简约设计，轻盈握感</dd>
+                            <dd><progress value="80" max="100"></progress><span>80%</span></dd>
+                            <dd>29.00元<span>39元</span></dd>
+                            <dd>立即抢购</dd>
+
+                        </dl>
+                    </div></li>
+            </ul>
+    </div>
+<!--    内容底部区-->
+    <div class="main-footer">
+        *小米秒杀活动规则：
+        <br>
+        1.秒杀商品是否参加活动、最终秒杀成功的商品，以订单结算页显示为准，活动包括但不限于优惠券、赠品、满减、满赠等；
+        <br>
+        2.秒杀商品数量有限，活动以下单支付成功为准，请加入购物车后尽快下单支付;
+        <br>
+        3.秒杀价不含运费，最终以订单结算页价格为准；
+        <br>
+        4.订单中商品的数量、颜色、型号等，以订单结算页为准。
+        <br>
+        温馨提示：因可能存在系统缓存、页面更新导致价格变动异常等不确定性情况出现，如您发现活动商品标价或促销信息有异常，请您立即联系小米客服，以便我们及时补正。
+    </div>
+</div>
+<!--页脚-->
+<div class="footer">
+<!--    页脚上方导航栏-->
+<div class="footer-top">
+    <ul>
+        <li><a href="#"><span></span>预约维修服务</a></li>
+        <li><a href="#"><span></span>七天无理由退货</a></li>
+        <li><a href="#"><span></span>15天免费换货</a></li>
+        <li><a href="#"><span></span>满99包邮</a></li>
+        <li><a href="#"><span></span>520余家售后网点</a></li>
+    </ul>
+    <hr>
+</div>
+<!--    页脚下方导航栏-->
+    <div class="footer-bottom">
+        <dl>
+            <dt><a href="#">帮助中心</a></dt>
+            <dd><a href="#">账户管理</a></dd>
+            <dd><a href="#">购物指南</a></dd>
+            <dd><a href="#">订单操作</a></dd>
+        </dl>
+        <dl>
+            <dt>
+                <a href="#">服务支持</a></dt>
+            <dd><a href="#">售后政策</a></dd>
+            <dd><a href="#">自助服务</a></dd>
+            <dd><a href="#">相关下载</a></dd>
+        </dl>
+        <dl>
+            <dt><a href="#">线下门店</a></dt>
+            <dd><a href="#">小米之家</a></dd>
+            <dd><a href="#">服务网点</a></dd>
+            <dd><a href="#">授权体验店</a></dd>
+        </dl>
+        <dl>
+            <dt><a href="#">关于小米</a></dt>
+            <dd><a href="#">了解小米</a></dd>
+            <dd><a href="#">加入小米</a></dd>
+            <dd><a href="#">投资者关系</a></dd>
+            <dd><a href="#">廉洁举报</a></dd>
+        </dl>
+        <dl>
+            <dt><a href="#">关注我们</a></dt>
+            <dd><a href="#">新浪微博</a></dd>
+            <dd><a href="#">官方微信</a></dd>
+            <dd><a href="#"> 联系我们</a></dd>
+        </dl>
+        <dl>
+            <dt><a href="#">特色服务</a></dt>
+            <dd><a href="#">F 码通道</a></dd>
+            <dd><a href="#">礼物码</a></dd>
+            <dd><a href="#">防伪 查询</a></dd>
+        </dl>
+        <div class="relation">
+            <div class="relation-center">
+                <div class="relation-center-top">
+                    <p>400-100-5678</p>
+                    <p>8:00-18:00（仅收市话费）</p>
+                </div>
+                <a class="relation-a" href="#">人工客服</a>
+                <div class="relation-bottom">
+                    关注小米:
+                    <a href="#">
+                    </a>
+                    <a href="#"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!--行业证书-->
+<div class="equity-top">
+    <div class="equity">
+        <div class="equity-img">
+            <img src="imges/logo-footer.png" height="49" width="49"/>
+        </div>
+        <div class="equity-nav">
+            <p>
+                <a href="#">小米商城</a><span>|</span>
+                <a href="#">MIUI</a><span>|</span>
+                <a href="#">米家</a><span>|</span>
+                <a href="#">米聊</a><span>|</span>
+                <a href="#">多看</a><span>|</span>
+                <a href="#">游戏</a><span>|</span>
+                <a href="#">路由器</a><span>|</span>
+                <a href="#">米粉卡</a><span>|</span>
+                <a href="#">政企服务</a><span>|</span>
+                <a href="#">问题反馈</a><span>|</span>
+                <a href="#">小米天猫店</a><span>|</span>
+                <a href="#">小米集团隐私政策</a><span>|</span>
+                <a href="#">小米商城隐私政策</a><span>|</span>
+                <a href="#">小米商城用户协议</a>
+            </p>
+            <p>
+                <a href="#">© mi.com</a> 京ICP证110507号<a href="#">京ICP备10046444号</a> <a href="#">京公网安备11010802020134号</a>
+                <a href="#">京网文[2020]0276-042号</a> <a href="#">（京）网械平台备字（2018）第00005号 </a>
+                <a href="#">互联网药品信息服务资格证</a> <a href="#">(京) -非经营性-2014-0090</a> <a href="#">营业执照</a> <a href="#">医疗器械公告</a>
+                <a href="#">增值电信业务许可证</a>  网络食品经营备案 京食药网食备202010048 <a href="#">食品经营许可证</a>
+                违法和不良信息举报电话：171-5104-4404 <a href="#">知识产权侵权投诉</a> 本网站所列数据，除特殊说明，所有数据均出自我司实验室测试
+            </p>
+        </div>
+    </div>
+    <div class="equity-bottom">
+
+        <a href="#"><img src="imges/v-logo-1.png" height="28" width="85"/></a>
+        <a href="#"><img src="imges/v-logo-2_1.png" height="28" width="85"/></a>
+        <a href="#"><img src="imges/icon3.png" height="28" width="85"/></a>
+        <a href="#"><img src="imges/truste.png" height="28" width="85"/></a>
+    </div>
+    <p class="end"><img src="imges/slogan2020.png" height="21" width="368"/></p>
+</div>
+<script>
+<!--    使用滚动条控制div-->
+    window.onscroll = function (){
+        var scrollTop = 0 ;
+        var mainNav = document.getElementById("main-nav");
+        if(document.documentElement && document.documentElement.scrollTop){//解决滚动条兼容问题
+            scrollTop = document.documentElement.scrollTop;
+        }else if(document.body){
+            scrollTop = document.body.scrollTop;
+        }
+
+        if(scrollTop>=200){
+            mainNav.style.position = 'fixed';
+            mainNav.style.top = 0 +'px';
+
+        }else if(scrollTop){
+            mainNav.style.position = ""//使用js清除定位
+        }
+
+    };
+</script>
+</body>
+</html>
